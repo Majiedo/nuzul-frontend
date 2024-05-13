@@ -1,3 +1,5 @@
+import { FormValues } from "../components/Form";
+
 const BASE_URL = "https://6642099a3d66a67b3435ee69.mockapi.io";
 
 export type Property = {
@@ -24,7 +26,7 @@ const getProperty = async (id: string): Promise<Property> => {
   return data;
 };
 
-const addProperty = async (property: Property): Promise<Property> => {
+const addProperty = async (property: FormValues): Promise<Property> => {
   const response = await fetch(`${BASE_URL}/properties`, {
     method: "POST",
     headers: {
@@ -36,8 +38,11 @@ const addProperty = async (property: Property): Promise<Property> => {
   return data;
 };
 
-const updateProperty = async (property: Property): Promise<Property> => {
-  const response = await fetch(`${BASE_URL}/properties/${property.id}`, {
+const updateProperty = async (
+  id: string,
+  property: FormValues
+): Promise<Property> => {
+  const response = await fetch(`${BASE_URL}/properties/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

@@ -1,16 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
-import CreateProperty from "./pages/CreateProperty";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/create" element={<CreateProperty />} />
         <Route path="/:id" element={<Details />} />
       </Routes>
+      <Toaster />
     </BrowserRouter>
   );
 }

@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
 
-const Navbar = () => {
+interface NavbarProps {
+  onClick?: () => void;
+}
+
+const Navbar = ({ onClick }: NavbarProps) => {
   return (
     <nav className="py-4 border-b-2 flex items-center justify-between">
       <Link to="/">
@@ -9,9 +13,8 @@ const Navbar = () => {
           Real Estate Property
         </h1>
       </Link>
-      <Link to="/create">
-        <Button> Create Property</Button>
-      </Link>
+
+      <Button onClick={onClick}> Create Property</Button>
     </nav>
   );
 };
