@@ -27,7 +27,8 @@ export default function Details() {
 
   useEffect(() => {
     fetchProperty();
-  }, [id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <main>
