@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 import { formatDate } from "../utils/helper";
 import Button from "../components/Button";
 import Form from "../components/Form";
+import Confirmation from "../components/Confirmation";
 
 export default function Details() {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState(false);
+  const [modalDelete, setModalDelete] = useState(false);
   const [data, setData] = useState<Property>();
 
   const fetchProperty = async () => {
@@ -66,7 +68,12 @@ export default function Details() {
           <Button onClick={() => setModal(true)} className="w-1/3">
             Edit
           </Button>
-          <Button className="bg-red-600 hover:bg-red-500 w-1/3">Delete</Button>
+          <Button
+            onClick={() => setModalDelete(true)}
+            className="bg-red-600 hover:bg-red-500 w-1/3"
+          >
+            Delete
+          </Button>
         </div>
       )}
       {data && (
@@ -75,6 +82,13 @@ export default function Details() {
           setIsOpen={setModal}
           property={data}
           onSubmitFinish={fetchProperty}
+        />
+      )}
+      {data && (
+        <Confirmation
+          isOpen={modalDelete}
+          setIsOpen={setModalDelete}
+          id={id!}
         />
       )}
     </main>
