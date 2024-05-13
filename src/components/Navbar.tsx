@@ -9,7 +9,7 @@ const Navbar = ({ onClick }: NavbarProps) => {
   return (
     <nav className="py-4 border-b-2 flex items-center justify-between">
       <Link to="/">
-        <h1 className="text-4xl font-bold hover:cursor-pointer transition-all">
+        <h1 className="text-2xl md:text-4xl font-bold hover:cursor-pointer transition-all">
           Real Estate Property
         </h1>
       </Link>

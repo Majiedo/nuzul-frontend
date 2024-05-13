@@ -34,6 +34,7 @@ const Form = ({ isOpen, setIsOpen, property, onSubmitFinish }: FormProps) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: property
@@ -70,13 +71,16 @@ const Form = ({ isOpen, setIsOpen, property, onSubmitFinish }: FormProps) => {
     <Transition appear show={isOpen}>
       <Dialog
         open={isOpen}
-        onClose={() => setIsOpen(false)}
+        onClose={() => {
+          setIsOpen(false);
+          reset();
+        }}
         className="relative z-50"
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="max-w-lg space-y-4 border bg-white p-12 rounded-lg w-1/2">
+          <DialogPanel className="max-w-lg space-y-4 border bg-white p-12 rounded-lg w-full md:w-1/2">
             <DialogTitle className="font-bold text-lg">
               {property ? "Edit Property" : "Create Property"}
             </DialogTitle>

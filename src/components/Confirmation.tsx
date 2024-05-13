@@ -38,7 +38,7 @@ const Confirmation = ({ id, isOpen, setIsOpen }: ConfirmationProps) => {
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="max-w-lg space-y-4 border bg-white p-12 rounded-lg w-1/2">
+          <DialogPanel className="max-w-lg space-y-4 border bg-white p-12 rounded-lg w-full md:w-1/2">
             <DialogTitle className="font-bold text-lg">
               Are you sure?
             </DialogTitle>

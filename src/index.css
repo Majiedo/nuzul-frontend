@@ -13,5 +13,5 @@ body {
 }
 
 main {
-  @apply w-full max-w-5xl mx-auto;
+  @apply w-full max-w-5xl mx-auto px-4;
 }
