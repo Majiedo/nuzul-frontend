@@ -1,6 +1,6 @@
 const BASE_URL = "https://6642099a3d66a67b3435ee69.mockapi.io";
 
-type Property = {
+export type Property = {
   createdAt: string;
   title: string;
   price: string;

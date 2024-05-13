@@ -1,6 +1,11 @@
 import { useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export default function Details() {
   const { id } = useParams();
-  return <h1>{id}</h1>;
+  return (
+    <main>
+      <Navbar />
+    </main>
+  );
 }

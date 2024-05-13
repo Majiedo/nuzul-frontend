@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="py-4 border-b-2 flex items-center justify-between">
       <Link to="/">
         <h1 className="text-4xl font-bold hover:cursor-pointer transition-all">
-          Real Estate
+          Real Estate Property
         </h1>
       </Link>
       <Link to="/create">
